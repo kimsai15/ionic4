@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+      <ion-grid>
+        <ion-row>
+          <ion-col align-self-start>
+              <ion-button routerLink="/tabs/tab1">
+                  <ion-icon slot="start" name="arrow-dropleft"></ion-icon>
+                  ย้อนกลับ
+                </ion-button>
+          </ion-col>
+          <ion-col color = "Warning" align-self-center>
+            <ion-title>
+           เพิ่มข้อมูล
+           </ion-title>
+          </ion-col>
+          <ion-col align-self-end>
+           
+          </ion-col>
+        </ion-row>
+      </ion-grid>    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+    <ion-card >
+        <ion-card-header>       
+          <ion-card-title>เพิ่มข้อมูล</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content color ="Light">
+          <form  #form="ngForm" (ngSubmit)="logForm()">
+              <p> <b>ชื่อ : </b></p><ion-input [(ngModel)]="AM.name" name="name" placeholder="กรอกชื่อ" required=""></ion-input>
+              <p><b>ประเภท : </b></p><ion-input [(ngModel)]="AM.type" name="type" placeholder="กรอกประเภท" required></ion-input>
+              <p><b>รายละเอียด : </b> </p><ion-input [(ngModel)]="AM.detail" name="detail" placeholder="กรอกรายเอียด" required></ion-input>
+              <ion-button type="submit" b shape="round" fill="outline" [disabled]="form.invalid" >บันทึก</ion-button>   
+          </form>        
+        </ion-card-content>
+      </ion-card>
+      
+
+</ion-content>
+
